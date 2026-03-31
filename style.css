@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.4s;
+}
+
+:root {
+    --bg_body: hsl(0, 0%, 8%); 
+    --bg_card: hsl(0, 0%, 12%); 
+    --bg_btn: hsl(0, 0%, 20%);
+    --color: hsl(0, 0%, 100%);
+    --hover_color: hsl(0, 0%, 12%);
+    --hover_bg: hsl(75, 94%, 57%);
+    --border-radius: 16px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bg_body);
+    color: var(--color);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 400px;
+    width: 75%;
+    height: 65%;
+    
+    padding: 25px;
+    border-radius: var(--border-radius);
+
+    background-color: var(--bg_card);
+}
+
+.img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+}
+
+img {
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 50%;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 6px;
+}
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.addres {
+    font-weight: 600;
+    color: var(--hover_bg);
+    margin-bottom: 28px; 
+}
+
+.post {
+    font-weight: 400;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin-top: 10px
+}
+
+.btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 90%;
+    padding-block: 15px;
+    border-radius: calc(var(--border-radius) * 0.7);
+    background-color: var(--bg_btn);
+    color: var(--color);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 75%;
+        border-radius: calc(var(--border-radius) * 1.2);
+    }
+
+    .btn {
+        border-radius: calc(var(--border-radius) * 0.9);
+    }
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        background-color: var(--hover_bg);
+        color: var(--hover_color);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 5px rgba(225 225 225 / 0.1);
+        transition: 0.3s;
+    }
+}
+
+.btn:active {
+    background-color: var(--hover_bg);
+    color: var(--hover_color);
+    transition: 0.01s;
+}
